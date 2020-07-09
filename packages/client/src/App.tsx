@@ -12,21 +12,28 @@ const { Title } = Typography;
 
 function App() {
 
-  const [searchType, setSearchType] = useState<string>('byName');
   const client = new ApolloClient({
     uri: 'http://localhost:4000',
   });
 
+  const [searchType, setSearchType] = useState<string>('byName');
+  const [query, setQuery] = useState<string>('');
+
+
   return (
     <ApolloProvider client={client}>
       <div className="App">
+
         <Title>
           Pokemon
           </Title>
+
         <SearchType
           searchType={searchType}
           setSearchType={setSearchType}
         />
+
+
 
 
       </div>
