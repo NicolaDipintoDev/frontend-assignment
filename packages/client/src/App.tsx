@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import ApolloClient, { gql } from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
@@ -10,6 +10,7 @@ const { Title } = Typography;
 
 function App() {
 
+  const [searchType, setSearchType] = useState<string>('byName');
   const client = new ApolloClient({
     uri: 'http://localhost:4000',
   });
@@ -22,9 +23,9 @@ function App() {
           </Title>
         Search by: {' '}
         <Radio.Group
-          defaultValue="byName"
+          defaultValue={searchType}
           buttonStyle="solid"
-          onChange={value => () => console.log(value)}>
+          onChange={e => setSearchType(e.target.value)}>
           <Radio.Button value="byName">Name</Radio.Button>
           <Radio.Button value="byType">Type</Radio.Button>
         </Radio.Group>
