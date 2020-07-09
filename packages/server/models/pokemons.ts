@@ -10,6 +10,7 @@ interface Pokemon {
   id: string;
   name: string;
   types: string[];
+  classification: string;
 }
 
 const SIZE = 10;
@@ -32,12 +33,12 @@ export function query(args: {
     after === undefined
       ? identity
       : as =>
-          pipe(
-            as,
-            A.findIndex(a => a.id === after),
-            O.map(a => a + 1),
-            O.fold(() => as, idx => as.slice(idx))
-          );
+        pipe(
+          as,
+          A.findIndex(a => a.id === after),
+          O.map(a => a + 1),
+          O.fold(() => as, idx => as.slice(idx))
+        );
 
   const results: Pokemon[] = pipe(
     data,
