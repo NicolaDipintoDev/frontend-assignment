@@ -5,7 +5,7 @@ type Props = {
     setQuery: (value: string) => void;
     query: string
 }
-const SearchBar = ({ query, setQuery }) => {
+const SearchBar = ({ query, setQuery }: Props) => {
 
     const searching = (value: string) => {
         setQuery(value);

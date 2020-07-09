@@ -4,8 +4,8 @@ import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
 import { Typography } from 'antd';
 import 'antd/dist/antd.css';
-import searchType from './SearchType';
-import SearchType from './SearchType';
+import SearchType from './components/SearchType';
+import SearchBar from './components/SearchBar';
 
 const { Title } = Typography;
 
