@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import ApolloClient, { gql } from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
-import { Typography } from 'antd';
+import { Typography, Radio } from 'antd';
 import 'antd/dist/antd.css';
 
 const { Title } = Typography;
@@ -42,6 +42,13 @@ function App() {
         <Title>
           Pokemon
           </Title>
+        <Radio.Group
+          defaultValue="byName"
+          buttonStyle="solid"
+          onChange={value => () => console.log(value)}>
+          <Radio.Button value="byName">Name</Radio.Button>
+          <Radio.Button value="byType">Type</Radio.Button>
+        </Radio.Group>
       </div>
     </ApolloProvider>
   );
