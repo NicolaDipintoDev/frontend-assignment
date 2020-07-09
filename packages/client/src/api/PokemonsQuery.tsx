@@ -1,7 +1,7 @@
 import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost';
-import { Spin, Alert, Table } from 'antd';
+import { Spin, Alert, Table, Button } from 'antd';
 
 type Props = {
   searchedValue: string;
@@ -83,6 +83,10 @@ const Pokemons = ({ searchType, searchedValue }: Props) => {
 
   return <div className='Table'>
     <Table dataSource={result} columns={getColumns()} pagination={false} />
+    <div className="ButtonsWrapper">
+      <span className="Buttons" ><Button type="primary" size='large' > PrevPage </ Button> </span>
+      <span className="Buttons" ><Button type="primary" size='large' > nextPage </ Button> </span>
+    </div>
   </div>
 }
 
