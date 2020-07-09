@@ -33,7 +33,12 @@ function App() {
           setSearchType={setSearchType}
         />
 
-
+        {searchType === 'byName' &&
+          <SearchBar
+            query={query}
+            setQuery={setQuery}
+          />
+        }
 
 
       </div>

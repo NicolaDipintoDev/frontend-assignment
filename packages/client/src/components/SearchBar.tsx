@@ -10,7 +10,7 @@ const SearchBar = ({ query, setQuery }: Props) => {
     const searching = (value: string) => {
         setQuery(value);
     }
-    return <div>
+    return <div className="searchBar">
         <Input
             type='text'
             placeholder="Pokemon name"
