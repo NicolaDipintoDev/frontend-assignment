@@ -38,8 +38,9 @@ const Pokemons = ({ searchType, searchedValue }: Props) => {
   const { loading, error, data } = useQuery(getQuery());
 
   if (loading) return <Spin tip="Searching..." />;
-  if (error) return <div>Error! ${error.message}</div>;
-
+  if (error) return <div className="Alert">
+    <Alert message="Something gone wrong, retry" type="error" />;
+      </div>
   return (
 
     <h1> Response ok </h1>
