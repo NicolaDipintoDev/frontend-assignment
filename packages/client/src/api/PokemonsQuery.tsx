@@ -2,7 +2,6 @@ import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost';
 import { Spin, Alert, Table } from 'antd';
-import pokemons from '../components/Pokemons';
 
 type Props = {
   searchedValue: string;
