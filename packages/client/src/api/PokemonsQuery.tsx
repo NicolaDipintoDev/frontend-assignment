@@ -12,12 +12,12 @@ const Pokemons = ({ searchType, searchedValue }: Props) => {
   const getQuery = () => {
     const queryParams =
       searchType === 'byName' ?
-        `q:"${searchedValue}"` :
-        `type:"${searchedValue}"`;
+        `pokemons(q:"${searchedValue}"` :
+        `pokemonsByType(type:"${searchedValue}"`;
 
     return gql`
     {
-      pokemons(${queryParams}){ 
+      ${queryParams}){ 
   
       edges{
         node{
@@ -33,7 +33,7 @@ const Pokemons = ({ searchType, searchedValue }: Props) => {
       }
     }}
     `
-  }
+  };
 
   const { loading, error, data } = useQuery(getQuery());
 
@@ -81,7 +81,7 @@ const Pokemons = ({ searchType, searchedValue }: Props) => {
     },
   ];
 
-  return <div className="Table">
+  return <div className='Table'>
     <Table dataSource={result} columns={columns} />;
  </div>
 }
