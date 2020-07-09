@@ -9,6 +9,28 @@ function App() {
     uri: 'http://localhost:4000',
   });
 
+  client
+    .query({
+      query: gql`
+    {
+      pokemons(q:"${'b'}"){ 
+  
+      edges{
+        node{
+          name
+          types
+          id
+          classification
+        }
+      }
+      pageInfo{
+        hasNextPage
+        endCursor
+      }
+    }}
+    `
+    }).then(result => console.log(result));
+
   return (
     <ApolloProvider client={client}>
       <div className="App">
