@@ -2,6 +2,11 @@ import React from 'react';
 import './App.css';
 import ApolloClient, { gql } from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
+import { Typography } from 'antd';
+import 'antd/dist/antd.css';
+
+const { Title } = Typography;
+
 
 function App() {
 
@@ -34,8 +39,10 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <div className="App">
-        Squirtle best pokemon ever
-    </div>
+        <Title>
+          Pokemon
+          </Title>
+      </div>
     </ApolloProvider>
   );
 }
