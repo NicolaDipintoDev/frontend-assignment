@@ -9,7 +9,7 @@ function App() {
     uri: 'http://localhost:4000',
   });
 
-  client
+  /* client
     .query({
       query: gql`
     {
@@ -29,7 +29,7 @@ function App() {
       }
     }}
     `
-    }).then(result => console.log(result));
+    }).then(result => console.log(result)); */
 
   return (
     <ApolloProvider client={client}>
