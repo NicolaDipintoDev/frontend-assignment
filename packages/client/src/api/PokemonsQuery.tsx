@@ -56,7 +56,7 @@ const Pokemons = ({ searchType, searchedValue }: Props) => {
     return { key: edge.node.id, name: edge.node.name, types: edge.node.types, classification: edge.node.classification }
   });
 
-  const columns = [
+  const getColumns = () => [
     {
       title: 'Name',
       dataIndex: 'name',
@@ -69,7 +69,7 @@ const Pokemons = ({ searchType, searchedValue }: Props) => {
       render: (types: Array<string>) => (
         <>
           {types.map((type: string) => {
-            return <span>{type + ' '}</span>
+            return <span key={type}>{type + ' '}</span>
           })}
         </>
       ),
@@ -82,7 +82,7 @@ const Pokemons = ({ searchType, searchedValue }: Props) => {
   ];
 
   return <div className='Table'>
-    <Table dataSource={result} columns={columns} />;
+    <Table dataSource={result} columns={getColumns()} />;
  </div>
 }
 
