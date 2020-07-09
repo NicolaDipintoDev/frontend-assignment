@@ -6,6 +6,7 @@ import { Typography } from 'antd';
 import 'antd/dist/antd.css';
 import SearchType from './components/SearchType';
 import SearchBar from './components/SearchBar';
+import PokemonsQuery from './api/PokemonsQuery';
 
 const { Title } = Typography;
 
@@ -39,6 +40,11 @@ function App() {
             setQuery={setQuery}
           />
         }
+        <PokemonsQuery
+          searchedValue={query}
+          searchType={searchType}
+        />
+
 
 
       </div>
