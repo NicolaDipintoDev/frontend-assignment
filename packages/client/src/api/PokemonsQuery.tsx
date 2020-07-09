@@ -81,7 +81,7 @@ const Pokemons = ({ searchType, searchedValue }: Props) => {
     },
   ];
 
-  return <div>
+  return <div className="Table">
     <Table dataSource={result} columns={columns} />;
  </div>
 }
