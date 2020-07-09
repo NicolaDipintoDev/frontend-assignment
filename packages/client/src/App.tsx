@@ -42,6 +42,7 @@ function App() {
         <Title>
           Pokemon
           </Title>
+        Search by: {' '}
         <Radio.Group
           defaultValue="byName"
           buttonStyle="solid"
