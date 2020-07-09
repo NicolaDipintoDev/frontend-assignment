@@ -1,6 +1,7 @@
 import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost';
+import { Spin, Alert } from 'antd';
 
 type Props = {
   searchedValue: string;
@@ -36,7 +37,7 @@ const Pokemons = ({ searchType, searchedValue }: Props) => {
 
   const { loading, error, data } = useQuery(getQuery());
 
-  if (loading) return <div>'Loading...'</div>;
+  if (loading) return <Spin tip="Searching..." />;
   if (error) return <div>Error! ${error.message}</div>;
 
   return (
