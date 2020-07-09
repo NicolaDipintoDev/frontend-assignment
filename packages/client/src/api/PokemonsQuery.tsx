@@ -82,8 +82,8 @@ const Pokemons = ({ searchType, searchedValue }: Props) => {
   ];
 
   return <div className='Table'>
-    <Table dataSource={result} columns={getColumns()} />;
- </div>
+    <Table dataSource={result} columns={getColumns()} pagination={false} />
+  </div>
 }
 
 export default Pokemons;
