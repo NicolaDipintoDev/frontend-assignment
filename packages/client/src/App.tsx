@@ -19,6 +19,7 @@ function App() {
 
   const [searchType, setSearchType] = useState<string>('byName');
   const [query, setQuery] = useState<string>('');
+  const [after, setAfter] = useState<string>('');
 
 
   return (
@@ -44,6 +45,8 @@ function App() {
           searchedValue={query}
           searchType={searchType}
           setQuery={setQuery}
+          after={after}
+          setAfter={setAfter}
         />
 
 

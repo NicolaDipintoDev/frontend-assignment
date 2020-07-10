@@ -9,14 +9,22 @@ type Props = {
   searchedValue: string;
   searchType: string;
   setQuery: (value: string) => void;
+  after: string;
+  setAfter: (value: string) => void;
 }
-const Pokemons = ({ searchType, searchedValue, setQuery }: Props) => {
+const Pokemons = ({ searchType, searchedValue, setQuery, after, setAfter }: Props) => {
 
   const getQuery = () => {
+
+    let query = `"${searchedValue}"`;
+    if (after) {
+      query = query + `, after:"${after}"`;
+    }
+
     const queryParams =
       searchType === 'byName' ?
-        `pokemons(q:"${searchedValue}"` :
-        `pokemonsByType(type:"${searchedValue}"`;
+        `pokemons(q:${query}` :
+        `pokemonsByType(type:${query}`;
 
     return gql`
     {
