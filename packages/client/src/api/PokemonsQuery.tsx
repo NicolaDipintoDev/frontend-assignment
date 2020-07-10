@@ -4,6 +4,7 @@ import { gql } from 'apollo-boost';
 import { Spin, Alert } from 'antd';
 import PokemonsList from '../components/pokemons/PokemonsList';
 import NavButtons from '../components/pokemons/NavButtons'
+import SearchType from '../components/SearchType';
 
 type Props = {
   searchedValue: string;
@@ -66,15 +67,16 @@ const Pokemons = ({ searchType, searchedValue, setQuery, after, setAfter, prevAf
     types: Array<string>;
   }
 
-  const result: Array<Node> = data.pokemons.edges.map((edge: Edge) => {
+  const pokemonaQuery = searchType === 'byName' ? data.pokemons : data.pokemonsByType;
+  const result: Array<Node> = pokemonaQuery.edges.map((edge: Edge) => {
     return { key: edge.node.id, name: edge.node.name, types: edge.node.types, classification: edge.node.classification }
   });
 
   return <div className='Table'>
     <PokemonsList pokemons={result} />
     <NavButtons
-      HasNextPage={data.pokemons.pageInfo.hasNextPage}
-      endCursor={data.pokemons.pageInfo.endCursor}
+      HasNextPage={pokemonaQuery.pageInfo.hasNextPage}
+      endCursor={pokemonaQuery.pageInfo.endCursor}
       setAfter={setAfter}
       setPrevAfter={setPrevAfter}
       prevAfter={prevAfter}
