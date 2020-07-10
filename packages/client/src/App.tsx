@@ -34,6 +34,7 @@ function App() {
         <SearchType
           searchType={searchType}
           setSearchType={setSearchType}
+          setQuery={setQuery}
         />
 
         {searchType === 'byName' &&

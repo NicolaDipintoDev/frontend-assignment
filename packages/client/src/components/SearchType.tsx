@@ -3,12 +3,16 @@ import { Radio } from 'antd';
 
 type Props = {
     setSearchType: (value: string) => void;
+    setQuery: (value: string) => void;
     searchType: string
 }
-const SearchType = ({ searchType, setSearchType }: Props) => {
+const SearchType = ({ searchType, setSearchType, setQuery }: Props) => {
     const onchange = (value: string) => {
         setSearchType(value);
+        setQuery(value === 'byName' ? '' : 'Normal');
     }
+
+
     return <div>
         Search by: {' '}
         <Radio.Group
