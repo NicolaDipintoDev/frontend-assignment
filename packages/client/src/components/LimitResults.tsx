@@ -1,18 +1,16 @@
 import React from 'react';
-import { Radio } from 'antd';
+import { InputNumber } from 'antd';
 
 type Props = {
-    setLimit: (value: number) => void;
-    limit: number
+    setLimit: (value: string | number | undefined) => void;
 }
-const LimitResults = ({ limit, setLimit }: Props) => {
-    const onchange = (value: string) => {
-
-    }
+const LimitResults = ({ setLimit }: Props) => {
 
 
-    return <div>
-        miao
+
+    return <div className="limit">
+        Max Pokemons result: {' '}
+        <InputNumber min={1} max={151} defaultValue={10} onChange={(value: string | number | undefined) => setLimit(value)} />
     </div>
 }
 

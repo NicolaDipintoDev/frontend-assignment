@@ -22,7 +22,7 @@ const Pokemons = () => {
     const [query, setQuery] = useState<string>('');
     const [after, setAfter] = useState<string>('');
     const [prevAfter, setPrevAfter] = useState<string>('000');
-    const [limit, setLimit] = useState<number>(10);
+    const [limit, setLimit] = useState<string | number | undefined>('10');
 
 
     return (
@@ -50,7 +50,6 @@ const Pokemons = () => {
                 />
 
                 <LimitResults
-                    limit={limit}
                     setLimit={setLimit}
                 />
 
