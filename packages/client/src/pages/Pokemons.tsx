@@ -7,6 +7,7 @@ import 'antd/dist/antd.css';
 import SearchType from '../components/SearchType';
 import GetSearchMethod from '../components/searchMethods/GetSearchMethod'
 import PokemonsQuery from '../api/PokemonsQuery';
+import LimitResults from '../components/LimitResults';
 import { Link } from 'react-router-dom';
 
 const { Title } = Typography;
@@ -21,6 +22,7 @@ const Pokemons = () => {
     const [query, setQuery] = useState<string>('');
     const [after, setAfter] = useState<string>('');
     const [prevAfter, setPrevAfter] = useState<string>('000');
+    const [limit, setLimit] = useState<number>(10);
 
 
     return (
@@ -46,6 +48,12 @@ const Pokemons = () => {
                     query={query}
                     setQuery={setQuery}
                 />
+
+                <LimitResults
+                    limit={limit}
+                    setLimit={setLimit}
+                />
+
 
                 <PokemonsQuery
                     searchedValue={query}
