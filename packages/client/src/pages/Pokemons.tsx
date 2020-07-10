@@ -7,6 +7,7 @@ import 'antd/dist/antd.css';
 import SearchType from '../components/SearchType';
 import GetSearchMethod from '../components/searchMethods/GetSearchMethod'
 import PokemonsQuery from '../api/PokemonsQuery';
+import { Link } from 'react-router-dom';
 
 const { Title } = Typography;
 
@@ -25,7 +26,11 @@ const Pokemons = () => {
     return (
         <ApolloProvider client={client}>
             <div className="App">
-
+                <p className='link'>
+                    <Link to="/starters">
+                        Who is the best starter ever?
+                    </Link>
+                </p>
                 <Title>
                     Pokemon
             </Title>
