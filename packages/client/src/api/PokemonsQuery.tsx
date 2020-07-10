@@ -74,10 +74,7 @@ const Pokemons = ({ searchType, searchedValue, setQuery, after, setAfter, prevAf
     <PokemonsList pokemons={result} />
     <NavButtons
       HasNextPage={data.pokemons.pageInfo.hasNextPage}
-      HasPrevPage={false}
-      setQuery={setQuery}
       endCursor={data.pokemons.pageInfo.endCursor}
-      searchedValue={searchedValue}
       setAfter={setAfter}
       setPrevAfter={setPrevAfter}
       prevAfter={prevAfter}

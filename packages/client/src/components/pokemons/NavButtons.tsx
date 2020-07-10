@@ -3,15 +3,12 @@ import { Button } from 'antd';
 
 type Props = {
     HasNextPage: boolean,
-    HasPrevPage: boolean,
-    setQuery: (value: string) => void;
     setAfter: (value: string) => void;
     setPrevAfter: (value: string) => void;
     endCursor: string;
-    searchedValue: string;
     prevAfter: string;
 }
-const NavButtons = ({ HasNextPage, HasPrevPage, setQuery, searchedValue, endCursor, setAfter, setPrevAfter, prevAfter }: Props) => {
+const NavButtons = ({ HasNextPage, endCursor, setAfter, setPrevAfter, prevAfter }: Props) => {
 
 
     const nextPage = () => {
