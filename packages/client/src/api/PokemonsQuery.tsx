@@ -8,7 +8,6 @@ import NavButtons from '../components/pokemons/NavButtons'
 type Props = {
   searchedValue: string;
   searchType: string;
-  setQuery: (value: string) => void;
   after: string;
   setAfter: (value: string) => void;
   prevAfter: string;
@@ -16,7 +15,7 @@ type Props = {
   limit: string | number | undefined;
 
 }
-const Pokemons = ({ searchType, searchedValue, setQuery, after, setAfter, prevAfter, setPrevAfter, limit }: Props) => {
+const Pokemons = ({ searchType, searchedValue, after, setAfter, prevAfter, setPrevAfter, limit }: Props) => {
 
   const getQuery = () => {
 

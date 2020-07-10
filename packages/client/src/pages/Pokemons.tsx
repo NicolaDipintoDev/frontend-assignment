@@ -57,7 +57,6 @@ const Pokemons = () => {
                 <PokemonsQuery
                     searchedValue={query}
                     searchType={searchType}
-                    setQuery={setQuery}
                     after={after}
                     setAfter={setAfter}
                     prevAfter={prevAfter}
