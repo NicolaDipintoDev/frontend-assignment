@@ -16,7 +16,27 @@ const NavButtons = ({ HasNextPage, HasPrevPage, setQuery, searchedValue, endCurs
 
     const nextPage = () => {
         setAfter(endCursor);
-        setPrevAfter(endCursor);
+        setPrevAfter(prevAfter + ',' + endCursor);
+    }
+
+    const prevPage = () => {
+        const currentAfter = prevAfter.lastIndexOf(',');
+        if (currentAfter === -1) {
+            setAfter('');
+            setPrevAfter('000');
+        } else {
+            const removeLastAfter = prevAfter.substring(0, currentAfter);
+            const newLastAfter = removeLastAfter.lastIndexOf(',')
+            if (newLastAfter === -1) {
+                setAfter('');
+                setPrevAfter('000');
+            }
+            else {
+                setAfter(removeLastAfter.substring(newLastAfter + 1));
+                setPrevAfter(removeLastAfter);
+            }
+
+        }
     }
 
     return <div className="ButtonsWrapper">
@@ -25,6 +45,7 @@ const NavButtons = ({ HasNextPage, HasPrevPage, setQuery, searchedValue, endCurs
                 type="primary"
                 size='large'
                 disabled={prevAfter === '000'}
+                onClick={() => prevPage()}
             >
                 PrevPage
             </ Button>
