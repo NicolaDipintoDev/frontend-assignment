@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Button } from 'antd';
 
 type Props = {
@@ -21,30 +21,23 @@ const NavButtons = ({ HasNextPage, HasPrevPage, setQuery, searchedValue, endCurs
     const prevPage = () => {
         const lastComma = prevAfter.lastIndexOf(',');
         if (lastComma === -1) {
-            setAfterFirstPage();
+            setAfterValues('', '', true);
         } else {
             const removeLastAfter = prevAfter.substring(0, lastComma);
             const newLastComma = removeLastAfter.lastIndexOf(',')
             if (newLastComma === -1) {
-                setAfterFirstPage();
+                setAfterValues('', '', true);
             }
             else {
                 setAfterValues(removeLastAfter.substring(newLastComma + 1), removeLastAfter);
             }
-
         }
     }
 
-    const setAfterValues = (afterValue: string, prevAfterValue: string) => {
-        setAfter(afterValue);
-        setPrevAfter(prevAfterValue);
+    const setAfterValues = (afterValue: string, prevAfterValue: string, firstPage?: boolean) => {
+        setAfter(!firstPage ? afterValue : '');
+        setPrevAfter(!firstPage ? prevAfterValue : '000');
     }
-
-    const setAfterFirstPage = () => {
-        setAfter('');
-        setPrevAfter('000');
-    }
-
 
     return <div className="ButtonsWrapper">
         <span className="Buttons" >

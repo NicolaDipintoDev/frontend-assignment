@@ -1,7 +1,7 @@
 import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost';
-import { Spin, Alert, Button } from 'antd';
+import { Spin, Alert } from 'antd';
 import PokemonsList from '../components/pokemons/PokemonsList';
 import NavButtons from '../components/pokemons/NavButtons'
 
