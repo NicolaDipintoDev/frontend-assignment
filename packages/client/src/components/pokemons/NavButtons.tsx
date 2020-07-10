@@ -5,6 +5,7 @@ type Props = {
     HasNextPage: boolean,
     HasPrevPage: boolean,
     setQuery: (value: string) => void;
+    endCursor: string;
 }
 const NavButtons = ({ HasNextPage, HasPrevPage, setQuery }: Props) => {
 

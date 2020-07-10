@@ -65,6 +65,7 @@ const Pokemons = ({ searchType, searchedValue, setQuery }: Props) => {
       HasNextPage={data.pokemons.pageInfo.hasNextPage}
       HasPrevPage={false}
       setQuery={setQuery}
+      endCursor={data.pokemons.pageInfo.endCursor}
     />
   </div>
 }
