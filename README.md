@@ -1,3 +1,7 @@
+# Please note:
+
+First time with graphqL, Apollo Server/Clinet and Typescript in React, so maybe some pieces of code doesn't follow the best practise.
+
 # Assignment for Frontend Position
 
 In Satispay one of the main task for a frontend developer is to build useful interfaces in order to display, search and interact with data.
