@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from 'antd';
 
 type Props = {
@@ -11,6 +11,7 @@ type Props = {
 }
 const NavButtons = ({ HasNextPage, HasPrevPage, setQuery, searchedValue, endCursor, setAfter }: Props) => {
 
+    const [prevAfter, setPrevAfter] = useState<string>('000');
     const nextPage = () => {
         setAfter(endCursor);
     }
@@ -20,7 +21,7 @@ const NavButtons = ({ HasNextPage, HasPrevPage, setQuery, searchedValue, endCurs
             <Button
                 type="primary"
                 size='large'
-                disabled={!HasPrevPage}
+                disabled={prevAfter === '000'}
             >
                 PrevPage
             </ Button>
