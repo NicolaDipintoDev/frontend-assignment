@@ -6,6 +6,7 @@ import { Typography } from 'antd';
 import 'antd/dist/antd.css';
 import SearchType from './components/SearchType';
 import SearchBar from './components/SearchBar';
+import ByTypeSearch from './components/ByTypeSearch'
 import PokemonsQuery from './api/PokemonsQuery';
 
 const { Title } = Typography;
@@ -43,6 +44,14 @@ function App() {
             setQuery={setQuery}
           />
         }
+
+        {searchType === 'byType' &&
+          <ByTypeSearch
+            query={query}
+            setQuery={setQuery}
+          />
+        }
+
         <PokemonsQuery
           searchedValue={query}
           searchType={searchType}
