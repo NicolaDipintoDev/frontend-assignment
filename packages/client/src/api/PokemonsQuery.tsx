@@ -9,9 +9,8 @@ type Props = {
   searchedValue: string;
   searchType: string;
   setQuery: (value: string) => void;
-  query: string;
 }
-const Pokemons = ({ searchType, searchedValue, setQuery, query }: Props) => {
+const Pokemons = ({ searchType, searchedValue, setQuery }: Props) => {
 
   const getQuery = () => {
     const queryParams =
@@ -67,7 +66,7 @@ const Pokemons = ({ searchType, searchedValue, setQuery, query }: Props) => {
       HasPrevPage={false}
       setQuery={setQuery}
       endCursor={data.pokemons.pageInfo.endCursor}
-      query={query}
+      searchedValue={searchedValue}
     />
   </div>
 }
