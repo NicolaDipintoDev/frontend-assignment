@@ -25,6 +25,10 @@ const Pokemons = ({ searchType, searchedValue, setQuery, after, setAfter, prevAf
       query = query + `, after:"${after}"`;
     }
 
+    if (limit) {
+      query = query + `, limit:${limit}`;
+    }
+
     const queryParams =
       searchType === 'byName' ?
         `pokemons(q:${query}` :
@@ -54,8 +58,8 @@ const Pokemons = ({ searchType, searchedValue, setQuery, after, setAfter, prevAf
 
   if (loading) return <Spin tip="Searching..." />;
   if (error) return <div className="Alert">
-    <Alert message="Something gone wrong, retry" type="error" />;
-      </div>
+    <Alert message="Something gone wrong, retry" type="error" />
+  </div>
 
   type Edge = {
     node: Node;

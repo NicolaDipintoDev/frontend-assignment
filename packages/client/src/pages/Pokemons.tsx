@@ -35,7 +35,7 @@ const Pokemons = () => {
                 </p>
                 <Title>
                     Pokemon
-            </Title>
+                </Title>
 
                 <SearchType
                     searchType={searchType}
