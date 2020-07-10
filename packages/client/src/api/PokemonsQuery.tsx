@@ -75,6 +75,7 @@ const Pokemons = ({ searchType, searchedValue, setQuery, after, setAfter }: Prop
       setQuery={setQuery}
       endCursor={data.pokemons.pageInfo.endCursor}
       searchedValue={searchedValue}
+      setAfter={setAfter}
     />
   </div>
 }
