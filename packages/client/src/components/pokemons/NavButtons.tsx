@@ -11,6 +11,9 @@ type Props = {
 }
 const NavButtons = ({ HasNextPage, HasPrevPage, setQuery, searchedValue, endCursor, setAfter }: Props) => {
 
+    const nextPage = () => {
+        setAfter(endCursor);
+    }
 
     return <div className="ButtonsWrapper">
         <span className="Buttons" >
@@ -27,7 +30,7 @@ const NavButtons = ({ HasNextPage, HasPrevPage, setQuery, searchedValue, endCurs
                 type="primary"
                 size='large'
                 disabled={!HasNextPage}
-                onClick={() => setQuery('b')}
+                onClick={() => nextPage()}
             >
                 nextPage
             </ Button>
