@@ -44,6 +44,7 @@ function App() {
           searchedValue={query}
           searchType={searchType}
           setQuery={setQuery}
+          query={query}
         />
 
 

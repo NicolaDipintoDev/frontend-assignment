@@ -6,8 +6,9 @@ type Props = {
     HasPrevPage: boolean,
     setQuery: (value: string) => void;
     endCursor: string;
+    query: string;
 }
-const NavButtons = ({ HasNextPage, HasPrevPage, setQuery }: Props) => {
+const NavButtons = ({ HasNextPage, HasPrevPage, setQuery, query }: Props) => {
 
     return <div className="ButtonsWrapper">
         <span className="Buttons" >
