@@ -43,6 +43,7 @@ function App() {
         <PokemonsQuery
           searchedValue={query}
           searchType={searchType}
+          setQuery={setQuery}
         />
 
 

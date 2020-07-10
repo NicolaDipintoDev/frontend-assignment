@@ -3,12 +3,14 @@ import { useQuery } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost';
 import { Spin, Alert, Button } from 'antd';
 import PokemonsList from '../components/pokemons/PokemonsList';
+import NavButtons from '../components/pokemons/NavButtons'
 
 type Props = {
   searchedValue: string;
   searchType: string;
+  setQuery: (value: string) => void;
 }
-const Pokemons = ({ searchType, searchedValue }: Props) => {
+const Pokemons = ({ searchType, searchedValue, setQuery }: Props) => {
 
   const getQuery = () => {
     const queryParams =
@@ -59,10 +61,11 @@ const Pokemons = ({ searchType, searchedValue }: Props) => {
 
   return <div className='Table'>
     <PokemonsList pokemons={result} />
-    <div className="ButtonsWrapper">
-      <span className="Buttons" ><Button type="primary" size='large' > PrevPage </ Button> </span>
-      <span className="Buttons" ><Button type="primary" size='large' > nextPage </ Button> </span>
-    </div>
+    <NavButtons
+      HasNextPage={data.pokemons.pageInfo.hasNextPage}
+      HasPrevPage={false}
+      setQuery={setQuery}
+    />
   </div>
 }
 

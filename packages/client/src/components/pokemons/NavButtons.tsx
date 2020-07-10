@@ -4,8 +4,9 @@ import { Button } from 'antd';
 type Props = {
     HasNextPage: boolean,
     HasPrevPage: boolean,
+    setQuery: (value: string) => void;
 }
-const NavButtons = ({ HasNextPage, HasPrevPage }: Props) => {
+const NavButtons = ({ HasNextPage, HasPrevPage, setQuery }: Props) => {
 
     return <div className="ButtonsWrapper">
         <span className="Buttons" >
