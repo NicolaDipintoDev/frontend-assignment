@@ -1,6 +1,6 @@
 import React from 'react';
 import { Radio } from 'antd';
-import Types from '../constants/Types';
+import Types from '../../constants/Types';
 
 type Props = {
     setQuery: (value: string) => void;

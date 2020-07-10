@@ -5,8 +5,8 @@ import { ApolloProvider } from '@apollo/react-hooks';
 import { Typography } from 'antd';
 import 'antd/dist/antd.css';
 import SearchType from './components/SearchType';
-import SearchBar from './components/SearchBar';
-import ByTypeSearch from './components/ByTypeSearch'
+import SearchBar from './components/searchMethods/SearchBar';
+import ByTypeSearch from './components/searchMethods/ByTypeSearch'
 import PokemonsQuery from './api/PokemonsQuery';
 
 const { Title } = Typography;
