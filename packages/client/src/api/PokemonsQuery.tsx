@@ -4,7 +4,6 @@ import { gql } from 'apollo-boost';
 import { Spin, Alert } from 'antd';
 import PokemonsList from '../components/pokemons/PokemonsList';
 import NavButtons from '../components/pokemons/NavButtons'
-import SearchType from '../components/SearchType';
 
 type Props = {
   searchedValue: string;
