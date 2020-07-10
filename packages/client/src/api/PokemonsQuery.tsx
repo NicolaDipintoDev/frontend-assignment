@@ -15,7 +15,15 @@ type Props = {
   limit: string | number | undefined;
 
 }
-const Pokemons = ({ searchType, searchedValue, after, setAfter, prevAfter, setPrevAfter, limit }: Props) => {
+const Pokemons = ({
+  searchType,
+  searchedValue,
+  after,
+  setAfter,
+  prevAfter,
+  setPrevAfter,
+  limit
+}: Props) => {
 
   const getQuery = () => {
 
