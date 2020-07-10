@@ -1,7 +1,8 @@
 import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost';
-import { Spin, Alert, Table, Button } from 'antd';
+import { Spin, Alert, Button } from 'antd';
+import PokemonsList from '../components/pokemons/PokemonsList';
 
 type Props = {
   searchedValue: string;
@@ -52,37 +53,12 @@ const Pokemons = ({ searchType, searchedValue }: Props) => {
     types: Array<string>;
   }
 
-  const result = data.pokemons.edges.map((edge: Edge) => {
+  const result: Array<Node> = data.pokemons.edges.map((edge: Edge) => {
     return { key: edge.node.id, name: edge.node.name, types: edge.node.types, classification: edge.node.classification }
   });
 
-  const getColumns = () => [
-    {
-      title: 'Name',
-      dataIndex: 'name',
-      key: 'name',
-    },
-    {
-      title: 'Type',
-      dataIndex: 'types',
-      key: 'types',
-      render: (types: Array<string>) => (
-        <>
-          {types.map((type: string) => {
-            return <span key={type}>{type + ' '}</span>
-          })}
-        </>
-      ),
-    },
-    {
-      title: 'Classification',
-      dataIndex: 'classification',
-      key: 'classification',
-    },
-  ];
-
   return <div className='Table'>
-    <Table dataSource={result} columns={getColumns()} pagination={false} />
+    <PokemonsList pokemons={result} />
     <div className="ButtonsWrapper">
       <span className="Buttons" ><Button type="primary" size='large' > PrevPage </ Button> </span>
       <span className="Buttons" ><Button type="primary" size='large' > nextPage </ Button> </span>
