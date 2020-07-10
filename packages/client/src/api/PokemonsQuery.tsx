@@ -11,8 +11,11 @@ type Props = {
   setQuery: (value: string) => void;
   after: string;
   setAfter: (value: string) => void;
+  prevAfter: string;
+  setPrevAfter: (value: string) => void;
+
 }
-const Pokemons = ({ searchType, searchedValue, setQuery, after, setAfter }: Props) => {
+const Pokemons = ({ searchType, searchedValue, setQuery, after, setAfter, prevAfter, setPrevAfter }: Props) => {
 
   const getQuery = () => {
 
@@ -76,6 +79,8 @@ const Pokemons = ({ searchType, searchedValue, setQuery, after, setAfter }: Prop
       endCursor={data.pokemons.pageInfo.endCursor}
       searchedValue={searchedValue}
       setAfter={setAfter}
+      setPrevAfter={setPrevAfter}
+      prevAfter={prevAfter}
     />
   </div>
 }

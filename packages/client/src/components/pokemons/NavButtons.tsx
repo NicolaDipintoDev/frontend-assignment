@@ -6,14 +6,17 @@ type Props = {
     HasPrevPage: boolean,
     setQuery: (value: string) => void;
     setAfter: (value: string) => void;
+    setPrevAfter: (value: string) => void;
     endCursor: string;
     searchedValue: string;
+    prevAfter: string;
 }
-const NavButtons = ({ HasNextPage, HasPrevPage, setQuery, searchedValue, endCursor, setAfter }: Props) => {
+const NavButtons = ({ HasNextPage, HasPrevPage, setQuery, searchedValue, endCursor, setAfter, setPrevAfter, prevAfter }: Props) => {
 
-    const [prevAfter, setPrevAfter] = useState<string>('000');
+
     const nextPage = () => {
         setAfter(endCursor);
+        setPrevAfter(endCursor);
     }
 
     return <div className="ButtonsWrapper">

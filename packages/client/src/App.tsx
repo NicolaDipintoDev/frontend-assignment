@@ -20,6 +20,7 @@ function App() {
   const [searchType, setSearchType] = useState<string>('byName');
   const [query, setQuery] = useState<string>('');
   const [after, setAfter] = useState<string>('');
+  const [prevAfter, setPrevAfter] = useState<string>('000');
 
 
   return (
@@ -47,6 +48,8 @@ function App() {
           setQuery={setQuery}
           after={after}
           setAfter={setAfter}
+          prevAfter={prevAfter}
+          setPrevAfter={setPrevAfter}
         />
 
 
