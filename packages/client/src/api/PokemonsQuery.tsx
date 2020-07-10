@@ -13,9 +13,10 @@ type Props = {
   setAfter: (value: string) => void;
   prevAfter: string;
   setPrevAfter: (value: string) => void;
+  limit: string | number | undefined;
 
 }
-const Pokemons = ({ searchType, searchedValue, setQuery, after, setAfter, prevAfter, setPrevAfter }: Props) => {
+const Pokemons = ({ searchType, searchedValue, setQuery, after, setAfter, prevAfter, setPrevAfter, limit }: Props) => {
 
   const getQuery = () => {
 

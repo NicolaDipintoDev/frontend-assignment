@@ -62,6 +62,7 @@ const Pokemons = () => {
                     setAfter={setAfter}
                     prevAfter={prevAfter}
                     setPrevAfter={setPrevAfter}
+                    limit={limit}
                 />
 
             </div>
