@@ -20,24 +20,26 @@ const NavButtons = ({ HasNextPage, HasPrevPage, setQuery, searchedValue, endCurs
     }
 
     const prevPage = () => {
-        const currentAfter = prevAfter.lastIndexOf(',');
-        if (currentAfter === -1) {
+        const lastComma = prevAfter.lastIndexOf(',');
+        if (lastComma === -1) {
             setAfter('');
             setPrevAfter('000');
         } else {
-            const removeLastAfter = prevAfter.substring(0, currentAfter);
-            const newLastAfter = removeLastAfter.lastIndexOf(',')
-            if (newLastAfter === -1) {
+            const removeLastAfter = prevAfter.substring(0, lastComma);
+            const newLastComma = removeLastAfter.lastIndexOf(',')
+            if (newLastComma === -1) {
                 setAfter('');
                 setPrevAfter('000');
             }
             else {
-                setAfter(removeLastAfter.substring(newLastAfter + 1));
+                setAfter(removeLastAfter.substring(newLastComma + 1));
                 setPrevAfter(removeLastAfter);
             }
 
         }
     }
+
+
 
     return <div className="ButtonsWrapper">
         <span className="Buttons" >
