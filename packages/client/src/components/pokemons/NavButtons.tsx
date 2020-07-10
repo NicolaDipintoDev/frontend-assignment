@@ -15,30 +15,35 @@ const NavButtons = ({ HasNextPage, HasPrevPage, setQuery, searchedValue, endCurs
 
 
     const nextPage = () => {
-        setAfter(endCursor);
-        setPrevAfter(prevAfter + ',' + endCursor);
+        setAfterValues(endCursor, prevAfter + ',' + endCursor);
     }
 
     const prevPage = () => {
         const lastComma = prevAfter.lastIndexOf(',');
         if (lastComma === -1) {
-            setAfter('');
-            setPrevAfter('000');
+            setAfterFirstPage();
         } else {
             const removeLastAfter = prevAfter.substring(0, lastComma);
             const newLastComma = removeLastAfter.lastIndexOf(',')
             if (newLastComma === -1) {
-                setAfter('');
-                setPrevAfter('000');
+                setAfterFirstPage();
             }
             else {
-                setAfter(removeLastAfter.substring(newLastComma + 1));
-                setPrevAfter(removeLastAfter);
+                setAfterValues(removeLastAfter.substring(newLastComma + 1), removeLastAfter);
             }
 
         }
     }
 
+    const setAfterValues = (afterValue: string, prevAfterValue: string) => {
+        setAfter(afterValue);
+        setPrevAfter(prevAfterValue);
+    }
+
+    const setAfterFirstPage = () => {
+        setAfter('');
+        setPrevAfter('000');
+    }
 
 
     return <div className="ButtonsWrapper">
