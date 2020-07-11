@@ -2,6 +2,13 @@
 
 First time with graphqL, Apollo Server/Clinet and Typescript in React, so maybe some pieces of code don't follow the best practise.
 
+#Run it
+
+1) clone repo
+2) on terminal, go into the project's folder & digit: yarn install
+3) digit: `yarn workspace @frontend-assignment/server start` 
+4) open another terminal, go into the project's folder & digit: `yarn workspace @frontend-assignment/client start`
+
 # Assignment for Frontend Position
 
 In Satispay one of the main task for a frontend developer is to build useful interfaces in order to display, search and interact with data.
