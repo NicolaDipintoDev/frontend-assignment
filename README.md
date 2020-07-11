@@ -1,3 +1,5 @@
+# Experience: 6 months
+
 # Please note:
 
 First time with graphqL, Apollo Server/Clinet and Typescript in React, so maybe some pieces of code don't follow the best practise.
