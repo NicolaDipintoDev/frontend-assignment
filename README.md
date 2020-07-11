@@ -2,7 +2,7 @@
 
 First time with graphqL, Apollo Server/Clinet and Typescript in React, so maybe some pieces of code don't follow the best practise.
 
-#Run it
+# Run it
 
 1) clone repo
 2) on terminal, go into the project's folder & digit: yarn install
